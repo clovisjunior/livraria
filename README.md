@@ -77,8 +77,8 @@ A pasta **dist** será criada como produto do comando anterior.
   - Importação do Controller e do Serviço do index.html
   - Criação da rota no app.module.js
   - Adicionado o link no menu para o Livro em index.html
-  - Instalação dos componentes **ng-file-upload-shim**, **ng-file-upload** e **angular-file-saver** para funcionalidade de Upload e Dowload
-  - Configuração dos novos componentes no arquivo app.module.js
+- Instalação dos componentes **ng-file-upload-shim**, **ng-file-upload** e **angular-file-saver** para funcionalidade de Upload e Dowload
+- Configuração dos novos componentes no arquivo app.module.js
 
 ```sh
 $ cd <pasta de instalação>/frontend
