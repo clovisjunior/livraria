@@ -11,9 +11,7 @@
             getBooks: getBooks,
             getBook: getBook,
             save: save,
-            remove: remove,
-            download: download,
-            removeBook: removeBook
+            remove: remove
         };
 
 
@@ -61,27 +59,6 @@
                 return response.data;
             }
         }
-
-        function download(bookId){
-            return $http
-                .get('api/book/download/' + bookId, {responseType:'arraybuffer'})
-                .then(downloadSuccess);
-
-            function downloadSuccess(response){
-                return response;
-            }
-        }
-
-        function removeBook(book){
-            return $http
-                .delete('api/book/download/' + book.id)
-                .then(removeSuccess);
-
-            function removeSuccess(response){
-                return response;
-            }
-        }
-       
     }
     
 })();

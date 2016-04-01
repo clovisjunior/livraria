@@ -9,5 +9,15 @@
 	        templateUrl: 'views/partials/alerts.html'
 	    };
 	})
+
+	.directive('attachment', function(){
+		return {
+			restrict: 'E',
+	        scope: {
+	            book: '='
+	        },
+	        templateUrl: 'views/partials/attachment.html'
+		}
+	})
 	
 })();
