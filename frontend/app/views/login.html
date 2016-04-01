@@ -1,0 +1,29 @@
+<div class="col-md-offset-4 col-md-4">
+    <div class="painel painel-default" >
+        <form name="loginForm" ng-controller="AuthController" ng-submit="login(credentials)" novalidate>
+            <div class="panel-body">
+                <p>
+                    <label for="username">Email</label>
+                    <input id="username" type="email" class="form-control" ng-model="credentials.username" autofill="autofill"/>
+                    <span id="username-message" class="text-danger"></span>
+                </p>
+                <p>
+                    <label for="password">Senha</label>
+                    <input id="password" type="password" class="form-control" ng-model="credentials.password" autofill="autofill"/>
+                    <span id="password-message" class="text-danger"></span>
+                </p>
+                <p>
+                    <button id="login" class="btn btn-success" type="submit">Entrar</button>
+                </p>
+                <div id="message" class="text-danger"></div>
+                <p>
+                    <b>Email:</b> <i>admin@demoiselle.gov.br</i> ou <i>usuario@demoiselle.gov.br</i>
+                </p>
+                <p>
+                    <b>Senha:</b> 123456
+                </p>
+
+            </div>
+        </form>
+    </div>
+</div>
