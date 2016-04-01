@@ -19,5 +19,15 @@
 	        templateUrl: 'views/partials/attachment.html'
 		}
 	})
+
+	.directive('attachmentDownload', function(){
+		return {
+			restrict: 'E',
+	        scope: {
+	            book: '='
+	        },
+	        templateUrl: 'views/partials/attachment-download.html'
+		}
+	})
 	
 })();

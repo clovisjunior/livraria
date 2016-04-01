@@ -3,9 +3,9 @@
 
 	angular.module('livraria').controller('AttachmentController', AttachmentController);
 
-	AttachmentController.$inject = ['$scope', 'AlertService', 'Upload', 'FileSaver', 'AttachmentService'];
+	AttachmentController.$inject = ['$scope', 'AlertService', 'Upload', 'FileSaver', 'AttachmentService', 'MyLibraryService'];
 
-	function AttachmentController($scope, AlertService, Upload, FileSaver, AttachmentService) {
+	function AttachmentController($scope, AlertService, Upload, FileSaver, AttachmentService, MyLibraryService) {
 
 		$scope.anexo = {};
 	    $scope.progress = 0;
@@ -67,7 +67,11 @@
 
 	    $scope.addToMyLibrary = function(book){
 	    	if(book){
-	    		
+	    		MyLibraryService.addToMyLibrary(book).then(function(res){
+	                AlertService.addWithTimeout('success', 'Livro adicionado a sua biblioteca');
+	            }, function(err){
+	                AlertService.addWithTimeout('danger', 'Não foi possível recuperar anexo');
+	            });
 	    	}
 	    }
 

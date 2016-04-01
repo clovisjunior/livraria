@@ -92,6 +92,14 @@
                     }
                 })
 
+                .when('/mylibrary', {
+                    templateUrl: 'views/mylibrary/mylibrary-list.html',
+                    controller: 'MyLibraryController',
+                    data: {
+                        authorizedRoles: [USER_ROLES.ADMINISTRADOR, USER_ROLES.USUARIO]
+                    }
+                })
+
                 .when('/swagger', {
                     templateUrl: 'views/swagger.html',
                     controller: 'SwaggerController',

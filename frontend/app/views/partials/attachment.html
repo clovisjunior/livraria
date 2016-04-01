@@ -33,9 +33,7 @@
                                 </a>
                             </td>
                             <td style="width: 40%">
-                                <a ng-click="download(book.id, book.title)" class="btn btn-primary btn-sm">
-                                    <i class="glyphicon glyphicon-download-alt"></i> download
-                                </a> 
+                                <attachment-download book="book"></attachment-download>
                                 <button confirm-button confirm-action="remove(book)" 
                                         class="btn btn-danger btn-sm" has-roles="ADMINISTRADOR">
                                     <i class="glyphicon glyphicon-trash"></i> excluir
