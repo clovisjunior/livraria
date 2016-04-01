@@ -6,6 +6,7 @@
         'config',
         'ngFileUpload',
         'ngFileSaver',
+        'countTo',
         'swaggerUi'
     ]).config(['$routeProvider', 'USER_ROLES',
         function ($routeProvider, USER_ROLES) {
