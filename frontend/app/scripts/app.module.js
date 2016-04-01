@@ -44,6 +44,30 @@
                     }
                 })
 
+                .when('/user', {
+                    templateUrl: 'views/user/user-list.html',
+                    controller: 'UserController',
+                    data: {
+                        authorizedRoles: [USER_ROLES.ADMINISTRADOR]
+                    }
+                })
+
+                .when('/user/edit', {
+                    templateUrl: 'views/user/user-edit.html',
+                    controller: 'UserController',
+                    data: {
+                        authorizedRoles: [USER_ROLES.ADMINISTRADOR]
+                    }
+                })
+
+                .when('/user/edit/:id', {
+                    templateUrl: 'views/user/user-edit.html',
+                    controller: 'UserController',
+                    data: {
+                        authorizedRoles: [USER_ROLES.ADMINISTRADOR]
+                    }
+                })
+
                 .when('/swagger', {
                     templateUrl: 'views/swagger.html',
                     controller: 'SwaggerController',
