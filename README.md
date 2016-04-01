@@ -24,7 +24,7 @@ $ sudo npm install grunt-cli -g
 $ rm -r -f ~/.npm/_locks/
 $ git config --global url."https://".insteadOf git://
 $ npm install
-$ bower install
+$ bower installa
 ```
 
 ## Execução do AngularJS com GruntJS
@@ -61,6 +61,7 @@ A pasta **dist** será criada como produto do comando anterior.
     - views
       - directives
       - partials
+
 ### Etapa 2
 - Criação do CRUD de Usuários
   - Controller
