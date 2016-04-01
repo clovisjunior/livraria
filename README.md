@@ -24,7 +24,7 @@ $ sudo npm install grunt-cli -g
 $ rm -r -f ~/.npm/_locks/
 $ git config --global url."https://".insteadOf git://
 $ npm install
-$ bower installa
+$ bower install
 ```
 
 ## Execução do AngularJS com GruntJS
