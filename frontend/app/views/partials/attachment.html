@@ -1,0 +1,51 @@
+<div ng-if="book.id" ng-controller="AttachmentController">
+    <div class="input-group" has-roles="ADMINISTRADOR">
+        <span class="input-group-btn"> 
+            <span class="btn btn-primary btn-file"> Escolher arquivo (PDF)&hellip; 
+                <input type="file" ngf-select="uploadFiles($files, $invalidFiles)" 
+                  ngf-pattern="'application/pdf'" 
+                  ngf-max-height="1000" ngf-max-size="20MB">
+            </span>
+        </span> 
+        <input type="text" class="form-control" readonly value=""></input>
+
+    </div>
+    <span has-roles="ADMINISTRADOR">{{labelArquivos}}</span>
+    <div>
+        <div class="progress" ng-show="progress > 0">
+            <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="{{progress}}" 
+                aria-valuemin="0" aria-valuemax="100"
+                style="width: {{progress}}%">
+                <span class="sr-only">{{progress}}%</span>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div class="panel panel-default" ng-if="book.file">
+        <div class="panel-body">
+            <div class="table-responsive">
+                <table class="table table-striped">
+                    <tbody>
+                        <tr>
+                            <td>
+                                <a ng-click="download(book.id, book.title)">                                         
+                                    {{book.title}}
+                                </a>
+                            </td>
+                            <td style="width: 40%">
+                                <attachment-download book="book"></attachment-download>
+                                <button confirm-button confirm-action="remove(book)" 
+                                        class="btn btn-danger btn-sm" has-roles="ADMINISTRADOR">
+                                    <i class="glyphicon glyphicon-trash"></i> excluir
+                                </button>
+                                <button ng-click="addToMyLibrary(book)" class="btn btn-success btn-sm">
+                                    <i class="glyphicon glyphicon-book"></i> + biblioteca
+                                </button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,32 @@
+<section class="content-header">
+    <ol class="breadcrumb">
+        <li><a href="#dashboard"><i class="fa fa-dashboard"></i> Início</a></li>
+        <li class="active">Livraria</li>
+    </ol>
+</section>
+<div>
+    <div class="row">
+        <div class="col-md-4">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h1><i class="glyphicon glyphicon-user"></i> Total de Usuários</h1>
+                </div>
+                <div class="panel-body text-center">
+                    <h1 count-to="{{userNumber}}" value="{{0}}" duration="1" filter="number"></h1>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h1><i class="glyphicon glyphicon-book"></i> Total de Livros</h1>
+                </div>
+                <div class="panel-body text-center">
+                    <h1 count-to="{{bookNumber}}" value="{{0}}" duration="1" filter="number"></h1>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>

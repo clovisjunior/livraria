@@ -1,0 +1,39 @@
+<div class="painel painel-default" has-roles="ADMINISTRADOR,USUARIO">
+    <h1 class="page-header">
+        Livro <small>Manter</small>
+    </h1>
+
+    <form role="form" has-roles-disable="ADMINISTRADOR">
+        <div class="form-group row">
+            <div class="col-md-6">
+                <label for="title">Título:</label>
+                <input type="text" class="form-control" id="title" ng-model="book.title" >
+                <span id="title-message" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="col-md-6">
+                <label for="description">Descrição:</label>
+                <input type="description" class="form-control" id="description" ng-model="book.description">
+                <span id="description-message" class="text-danger"></span>
+            </div>
+        </div>
+
+        <attachment book="book"></attachment>
+        
+    </form>
+</div>
+
+<div has-roles="ADMINISTRADOR">
+    <button class="btn btn-primary" ng-click="save()">
+        <i class="glyphicon glyphicon-ok-sign"> </i> Salvar
+    </button>
+
+    <button class="btn btn-danger" confirm-button confirm-action="remove()">
+        <i class="glyphicon glyphicon-trash"> </i> Remover
+    </button>
+</div>
+
+<a class="btn btn-inverse pull-right" href="#/book">
+    <i class="glyphicon glyphicon-arrow-left"></i> Voltar
+</a>
