@@ -44,6 +44,30 @@
                     }
                 })
 
+                .when('/book', {
+                    templateUrl: 'views/book/book-list.html',
+                    controller: 'BookController',                    
+                    data: {
+                        authorizedRoles: [USER_ROLES.ADMINISTRADOR, USER_ROLES.USUARIO]
+                    }
+                })
+
+                .when('/book/edit', {
+                    templateUrl: 'views/book/book-edit.html',
+                    controller: 'BookController',
+                    data: {
+                        authorizedRoles: [USER_ROLES.ADMINISTRADOR]
+                    }
+                })
+
+                .when('/book/edit/:id', {
+                    templateUrl: 'views/book/book-edit.html',
+                    controller: 'BookController',
+                    data: {
+                        authorizedRoles: [USER_ROLES.ADMINISTRADOR, USER_ROLES.USUARIO]
+                    }
+                })
+
                 .when('/user', {
                     templateUrl: 'views/user/user-list.html',
                     controller: 'UserController',

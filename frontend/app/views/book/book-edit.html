@@ -1,0 +1,91 @@
+<div class="painel painel-default" has-roles="ADMINISTRADOR,USUARIO">
+    <h1 class="page-header">
+        Livro <small>Manter</small>
+    </h1>
+
+    <form role="form" has-roles-disable="ADMINISTRADOR">
+        <div class="form-group row">
+            <div class="col-md-6">
+                <label for="title">Título:</label>
+                <input type="text" class="form-control" id="title" ng-model="book.title" >
+                <span id="title-message" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="col-md-6">
+                <label for="description">Descrição:</label>
+                <input type="description" class="form-control" id="description" ng-model="book.description">
+                <span id="description-message" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div ng-if="book.id">
+            <div class="input-group" has-roles="ADMINISTRADOR">
+                <span class="input-group-btn"> 
+                    <span class="btn btn-primary btn-file"> Escolher arquivo (PDF)&hellip; 
+                        <input type="file" ngf-select="uploadFiles($files, $invalidFiles)" 
+                          ngf-pattern="'application/pdf'" 
+                          ngf-max-height="1000" ngf-max-size="20MB">
+                    </span>
+                </span> 
+                <input type="text" class="form-control" readonly value=""></input>
+
+            </div>
+            <span has-roles="ADMINISTRADOR">{{labelArquivos}}</span>
+            <div>
+                <div class="progress" ng-show="progress > 0">
+                    <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="{{progress}}" 
+                        aria-valuemin="0" aria-valuemax="100"
+                        style="width: {{progress}}%">
+                        <span class="sr-only">{{progress}}%</span>
+                    </div>
+                </div>
+            </div>
+            <br/>
+            <div class="panel panel-default" ng-if="book.file">
+                <div class="panel-body">
+                    <div class="table-responsive">
+                        <table class="table table-striped">
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <a ng-click="download(book.id, book.title)">                                         
+                                            {{book.title}}
+                                        </a>
+                                    </td>
+                                    <td style="width: 40%">
+                                        <a ng-click="download(book.id, book.title)" class="btn btn-primary btn-sm">
+                                            <i class="glyphicon glyphicon-download-alt"></i> download
+                                        </a> 
+                                        <button confirm-button confirm-action="removeBook(book)" 
+                                                class="btn btn-danger btn-sm" has-roles="ADMINISTRADOR">
+                                            <i class="glyphicon glyphicon-trash"></i> excluir
+                                        </button>
+                                        <button ng-click="addToMyLibrary(book)" class="btn btn-success btn-sm">
+                                            <i class="glyphicon glyphicon-book"></i> + biblioteca
+                                        </button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </form>
+</div>
+
+<div has-roles="ADMINISTRADOR">
+    <button class="btn btn-primary" ng-click="save()">
+        <i class="glyphicon glyphicon-ok-sign"> </i> Salvar
+    </button>
+
+    <button class="btn btn-danger" confirm-button confirm-action="remove()">
+        <i class="glyphicon glyphicon-trash"> </i> Remover
+    </button>
+</div>
+
+<a class="btn btn-inverse pull-right" href="#/book">
+    <i class="glyphicon glyphicon-arrow-left"></i> Voltar
+</a>
