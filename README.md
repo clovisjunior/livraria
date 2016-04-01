@@ -1,1 +1,47 @@
-Aplicação de treinamento de AngularJS + Demoiselle 2.5
+# Livraria - Treinamento de AngularJS + Demoiselle 2.5
+
+A aplicação tem por objetivo auxiliar no treinamento de AngularJS + Demoiselle 2.5 ministrado pela CETEC/CTCTA.
+
+Ela é dividia em duas pastas
+
+### backend
+
+> Essa pasta armazena o código fonte da aplicação backend criada em Demoiselle 2.5 que disponibiliza os serviços REST para a aplicação AngularJS consumir.
+
+### frontend
+
+> Essa pasta armazena o código fonte da aplicação AngularJS
+
+## Instalação
+
+Para a instalação do **frontend** você precisá executar os seguintes passos em um terminal:
+
+```sh
+$ cd <pasta de instalação>/frontend
+$ sudo apt-get install nodejs
+$ sudo npm install bower -g
+$ sudo npm install grunt-cli -g 
+$ rm -r -f ~/.npm/_locks/
+$ git config --global url."https://".insteadOf git://
+$ npm install
+$ bower install
+```
+
+## Execução do AngularJS com GruntJS
+
+### Ambiente de desenvolvimento
+
+```sh
+$ cd <pasta de instalação>/frontend
+$ grunt serve
+```
+
+Acesse a url http://localhost:9000
+
+### Distribuição da aplicação
+
+```sh
+$ cd <pasta de instalação>/frontend
+$ grunt build
+```
+A pasta **dist** será criada como produto do comando anterior.
