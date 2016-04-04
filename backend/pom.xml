@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>livraria</groupId>
-    <artifactId>frontend</artifactId>
+    <artifactId>backend</artifactId>
     <version>0.0.1</version>
     <packaging>war</packaging>
 
@@ -20,7 +20,7 @@
     </parent>
 
     <build>
-        <finalName>frontend</finalName>
+        <finalName>backend</finalName>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
