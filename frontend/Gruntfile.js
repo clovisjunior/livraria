@@ -72,7 +72,7 @@ module.exports = function (grunt) {
                 livereload: 35729,
                 //open: true
             },
-            dev: {
+            keepalive: {
                 //options:{
                     middleware: function (connect) {
                         return [
@@ -344,7 +344,7 @@ module.exports = function (grunt) {
                 constants: {
                     ENV: {
                         name: 'production',
-                        apiEndpoint: '/livraria/'
+                        apiEndpoint: 'http://10.200.24.50:9090/livraria/'
                     }
                 }
             }
@@ -356,7 +356,7 @@ module.exports = function (grunt) {
 
     grunt.registerTask('serve', 'Compile then start a connect web server', function (target) {
         if (target === 'dist') {
-            return grunt.task.run(['build', 'connect:keepalive']);
+            return grunt.task.run(['build', 'connect:keepalive', 'open', 'watch']);
         }
 
         grunt.task.run([
@@ -365,7 +365,7 @@ module.exports = function (grunt) {
             'wiredep',
             'concurrent:server',
             'autoprefixer',
-            'connect:dev',
+            'connect:keepalive',
             'open',
             'watch'
         ]);
